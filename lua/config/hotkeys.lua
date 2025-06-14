@@ -12,8 +12,11 @@ local function setup_hotkeys()
   local n_keybinds = {
     ["<Leader>h"] = ":noh<CR>",
     -- Tab control
-    ["<Leader>bb"] = ":tabp<CR>",
-    ["<Leader>bn"] = ":tabn<CR>",
+    ["<Leader>bb"] = ":BufferLineCyclePrev<CR>",
+    ["<Leader>bn"] = ":BufferLineCycleNext<CR>",
+    ["<Leader>bh"] = ":BufferLineCloseLeft<CR>",
+    ["<Leader>bl"] = ":BufferLineCloseRight<CR>",
+    ["<Leader>bj"] = ":BufferLinePick<CR>",
     -- Commenting
     -- Movement between windows
     ["<C-h>"] = ":wincmd h<CR>",
@@ -21,6 +24,7 @@ local function setup_hotkeys()
     ["<C-k>"] = ":wincmd k<CR>",
     ["<C-l>"] = ":wincmd l<CR>",
 --    ["<Leader>"] = ""
+    ["<Leader>e"] = ":NvimTreeToggle<CR>",
   }
 
   local v_keybinds = {
@@ -28,11 +32,11 @@ local function setup_hotkeys()
 
 
   -- Set for normal mode
-  for i, j in pairs(n_keybinds) do 
+  for i, j in pairs(n_keybinds) do
     vim.keymap.set("n", i, j, opts)
   end
 
-  for i, j in pairs(v_keybinds) do 
+  for i, j in pairs(v_keybinds) do
     vim.keymap.set("v", i, j, opts)
   end
 

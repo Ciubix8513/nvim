@@ -57,6 +57,9 @@ local function set_settings()
   vim.opt.tabstop = 2
   vim.opt.relativenumber = true
 
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
+
 end
 
 
